@@ -42,9 +42,11 @@ export function signoutUser() {
 
 export function signupUser({ email, password, firstName, lastName, address }) {
   return function(dispatch) {
+    console.log('in actions', firstName, lastName);
     axios.post('/signup', {email, password, firstName, lastName, address})
+
     .then(response =>{
-      dispatch({ type: AUTH_USER});
+      dispatch({ type: AUTH_USER, payload: firstName + ' ' + lastName});
       localStorage.setItem('token', response.data.token);
       browserHistory.push('/');
     })
