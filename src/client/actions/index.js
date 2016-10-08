@@ -10,7 +10,6 @@ import { ADD_SERVICE_TOP, GET_SERVICES }      from '../constants';
 import { FETCH_USER }                         from '../constants';
 
 
-
 // action submits email, pw to the server
 // if success, update state of app to authenticated
 // save jwt token
@@ -194,6 +193,7 @@ export function getServices(query) {
   };
 }
 
+
 export function fetchUser(email) {
   return function(dispatch) {
     axios.post('/api/fetchUser', { email })
@@ -203,6 +203,7 @@ export function fetchUser(email) {
       .catch(error => console.log(error));
   }
 }
+
 
 
 

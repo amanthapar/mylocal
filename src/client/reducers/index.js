@@ -21,7 +21,6 @@ const rootReducer = combineReducers({
   tasks: Tasks,
   services: Services,
   user: User
-
 });
 
 export default rootReducer;
